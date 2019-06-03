@@ -1,0 +1,22 @@
+body {
+    background-image: url("../images/film-background.png");
+    background-size: cover;
+    }
+.jumbotron {
+    width: 75%;
+    margin: auto;
+}
+#jumbo {
+    background: rgba(255, 255, 255, 0.5); 
+}
+#card {
+    background: rgba(255, 255, 255, 0.5); 
+}
+#gameOverMessage {
+    color: white;
+    text-align: center;
+}
+#results {
+    color: white;
+    text-align: center;
+}
