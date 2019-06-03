@@ -92,43 +92,45 @@ interval = setInterval(countDown, 1000);
 //declared a function which decrements timer variable by one, then created a conditional statement that checks if the timer variable is greater than 0, if so setTimeout will execute a decrement after one second. The value of the timer variable will then be displayed on the DOM at the #timer id using JQuery.
 
 
-$("#questionOne").text(questionsArr[0].question);
-//utilizes JQuery to display question to the DOM on associated div utilizing .text
-$("#questionOneAnswers").append("<input type='radio' name='question1Answer' value='A'/>" + " " + questionsArr[0].answers.a + "<br>");
-//utilizes JQuery to append a radio concatenated with the array index for each question key value
-$("#questionOneAnswers").append("<input type='radio' name='question1Answer' value='B'/>" + " " + questionsArr[0].answers.b + "<br>");
-$("#questionOneAnswers").append("<input type='radio' name='question1Answer' value='C'/>" + " " + questionsArr[0].answers.c + "<br>");
-$("#questionOneAnswers").append("<input type='radio' name='question1Answer' value='D'/>" + " " + questionsArr[0].answers.d + "<br>");
+    $("#questionOne").text(questionsArr[0].question);
+    //utilizes JQuery to display question to the DOM on associated div utilizing .text
+    $("#questionOneAnswers").append("<input type='radio' name='question1Answer' value='A'/>" + " " + questionsArr[0].answers.a + "<br>");
+    //utilizes JQuery to append a radio concatenated with the array index for each question key value
+    $("#questionOneAnswers").append("<input type='radio' name='question1Answer' value='B'/>" + " " + questionsArr[0].answers.b + "<br>");
+    $("#questionOneAnswers").append("<input type='radio' name='question1Answer' value='C'/>" + " " + questionsArr[0].answers.c + "<br>");
+    $("#questionOneAnswers").append("<input type='radio' name='question1Answer' value='D'/>" + " " + questionsArr[0].answers.d + "<br>");
 
-$("#questionTwo").text(questionsArr[1].question);
-$("#questionTwoAnswers").append("<input type='radio' name='question2Answer' value='A'/>" + " " + questionsArr[1].answers.a + "<br>");
-$("#questionTwoAnswers").append("<input type='radio' name='question2Answer' value='B'/>" + " " + questionsArr[1].answers.b + "<br>");
-$("#questionTwoAnswers").append("<input type='radio' name='question2Answer' value='C'/>" + " " + questionsArr[1].answers.c + "<br>");
-$("#questionTwoAnswers").append("<input type='radio' name='question2Answer' value='D'/>" + " " + questionsArr[1].answers.d + "<br>");
+    $("#questionTwo").text(questionsArr[1].question);
+    $("#questionTwoAnswers").append("<input type='radio' name='question2Answer' value='A'/>" + " " + questionsArr[1].answers.a + "<br>");
+    $("#questionTwoAnswers").append("<input type='radio' name='question2Answer' value='B'/>" + " " + questionsArr[1].answers.b + "<br>");
+    $("#questionTwoAnswers").append("<input type='radio' name='question2Answer' value='C'/>" + " " + questionsArr[1].answers.c + "<br>");
+    $("#questionTwoAnswers").append("<input type='radio' name='question2Answer' value='D'/>" + " " + questionsArr[1].answers.d + "<br>");
 
-$("#questionThree").text(questionsArr[2].question);
-$("#questionThreeAnswers").append("<input type='radio' name='question3Answer' value='A'/>" + " " + questionsArr[2].answers.a + "<br>");
-$("#questionThreeAnswers").append("<input type='radio' name='question3Answer' value='B'/>" + " " + questionsArr[2].answers.b + "<br>");
-$("#questionThreeAnswers").append("<input type='radio' name='question3Answer' value='C'/>" + " " + questionsArr[2].answers.c + "<br>");
-$("#questionThreeAnswers").append("<input type='radio' name='question3Answer' value='D'/>" + " " + questionsArr[2].answers.d + "<br>");
+    $("#questionThree").text(questionsArr[2].question);
+    $("#questionThreeAnswers").append("<input type='radio' name='question3Answer' value='A'/>" + " " + questionsArr[2].answers.a + "<br>");
+    $("#questionThreeAnswers").append("<input type='radio' name='question3Answer' value='B'/>" + " " + questionsArr[2].answers.b + "<br>");
+    $("#questionThreeAnswers").append("<input type='radio' name='question3Answer' value='C'/>" + " " + questionsArr[2].answers.c + "<br>");
+    $("#questionThreeAnswers").append("<input type='radio' name='question3Answer' value='D'/>" + " " + questionsArr[2].answers.d + "<br>");
 
-$("#questionFour").text(questionsArr[3].question);
-$("#questionFourAnswers").append("<input type='radio' name='question4Answer' value='A'/>" + " " + questionsArr[3].answers.a + "<br>");
-$("#questionFourAnswers").append("<input type='radio' name='question4Answer' value='B'/>" + " " + questionsArr[3].answers.b + "<br>");
-$("#questionFourAnswers").append("<input type='radio' name='question4Answer' value='C'/>" + " " + questionsArr[3].answers.c + "<br>");
-$("#questionFourAnswers").append("<input type='radio' name='question4Answer' value='D'/>" + " " + questionsArr[3].answers.d + "<br>");
+    $("#questionFour").text(questionsArr[3].question);
+    $("#questionFourAnswers").append("<input type='radio' name='question4Answer' value='A'/>" + " " + questionsArr[3].answers.a + "<br>");
+    $("#questionFourAnswers").append("<input type='radio' name='question4Answer' value='B'/>" + " " + questionsArr[3].answers.b + "<br>");
+    $("#questionFourAnswers").append("<input type='radio' name='question4Answer' value='C'/>" + " " + questionsArr[3].answers.c + "<br>");
+    $("#questionFourAnswers").append("<input type='radio' name='question4Answer' value='D'/>" + " " + questionsArr[3].answers.d + "<br>");
 
-$("#questionFive").text(questionsArr[4].question);
-$("#questionFiveAnswers").append("<input type='radio' name='question5Answer' value='A'/>" + " " + questionsArr[4].answers.a + "<br>");
-$("#questionFiveAnswers").append("<input type='radio' name='question5Answer' value='B'/>" + " " + questionsArr[4].answers.b + "<br>");
-$("#questionFiveAnswers").append("<input type='radio' name='question5Answer' value='C'/>" + " " + questionsArr[4].answers.c + "<br>");
-$("#questionFiveAnswers").append("<input type='radio' name='question5Answer' value='D'/>" + " " + questionsArr[4].answers.d + "<br>");
+    $("#questionFive").text(questionsArr[4].question);
+    $("#questionFiveAnswers").append("<input type='radio' name='question5Answer' value='A'/>" + " " + questionsArr[4].answers.a + "<br>");
+    $("#questionFiveAnswers").append("<input type='radio' name='question5Answer' value='B'/>" + " " + questionsArr[4].answers.b + "<br>");
+    $("#questionFiveAnswers").append("<input type='radio' name='question5Answer' value='C'/>" + " " + questionsArr[4].answers.c + "<br>");
+    $("#questionFiveAnswers").append("<input type='radio' name='question5Answer' value='D'/>" + " " + questionsArr[4].answers.d + "<br>");
 
-$("#questionSix").text(questionsArr[5].question);
-$("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='A'/>" + " " + questionsArr[5].answers.a + "<br>");
-$("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='B'/>" + " " + questionsArr[5].answers.b + "<br>");
-$("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='C'/>" + " " + questionsArr[5].answers.c + "<br>");
-$("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='D'/>" + " " + questionsArr[5].answers.d + "<br>");
+    $("#questionSix").text(questionsArr[5].question);
+    $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='A'/>" + " " + questionsArr[5].answers.a + "<br>");
+    $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='B'/>" + " " + questionsArr[5].answers.b + "<br>");
+    $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='C'/>" + " " + questionsArr[5].answers.c + "<br>");
+    $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='D'/>" + " " + questionsArr[5].answers.d + "<br>");
+
+
 
 
 $("#submit").on("click", function() {
@@ -140,6 +142,8 @@ $("#submit").on("click", function() {
     var qFive = $('input[name=question5Answer]:checked').val(); 
     var qSix = $('input[name=question6Answer]:checked').val(); 
     clearInterval(interval);
+    $("#questions-div").hide();
+    $("#gameOverMessage").show();
     //submit button clears the interval
     answersArr = [qOne,qTwo,qThree,qFour,qFive,qSix];
     //radio answers are saved to answersArr
@@ -175,3 +179,14 @@ function timesUp() {
     $("#results").text("You got " + results + " correct out of " + possibleCorrect);
     //displays total correct out of possible correct to results div
 };
+
+$("#restart").on("click", function() {
+    $("#gameOverMessage").hide();
+    $("#questions-div").show();
+    $("#results").empty();
+    timer = 20;
+    results = 0;
+    interval = setInterval(countDown, 1000);
+
+}) 
+    
