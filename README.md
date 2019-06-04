@@ -17,15 +17,15 @@ In CSS a background image was formatted to cover and expand with resizing. Then 
 
 ___
 
-* HTML
-* CSS
-* JavaScript
-* JQuery
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+* [JQuery](https://api.jquery.com/)
 
 ![Graph](assets/images/graph.png)
 ___
 
-![Index Page](assets/images/dubs-challenge-screenshot.png)
+![Cinematic Trivia Game](assets/images/trivia-game-screenshot.png)
 
 [Cinematic Trivia Game page](https://djgoldstone.github.io/TriviaGame/)
 

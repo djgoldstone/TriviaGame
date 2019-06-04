@@ -20,3 +20,11 @@ body {
     color: white;
     text-align: center;
 }
+#sub-button {
+    text-align: center;
+}
+.reel-gif {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

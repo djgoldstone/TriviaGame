@@ -1,5 +1,5 @@
 var results = 0;
-var possibleCorrect = 6;
+var possibleCorrect = 12;
 //variable to be incremented with each correct answer and varible containing the number of total questions
 
 var answersArr = [];
@@ -121,7 +121,7 @@ var questionsArr = [
 //Array of objects containing key: value pairs of: question key with a value containing a string phrased as a cinematic trivia question, answers key with the value of another object containing key:value pairs between a-d with values of answer options, and a third key containing the correct answer value as a string.
 var interval;
 //empty variable which will contain interval
-var timer = 21;
+var timer = 91;
 //variable containing timer value which will decrement using setInterval
 function countDown() {
     timer--;
@@ -199,6 +199,42 @@ function questionDisplay() {
     $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='B'/>" + " " + questionsArr[5].answers.b + "<br>");
     $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='C'/>" + " " + questionsArr[5].answers.c + "<br>");
     $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='D'/>" + " " + questionsArr[5].answers.d + "<br>");
+
+    $("#questionSeven").text(questionsArr[6].question);
+    $("#questionSevenAnswers").append("<input type='radio' name='question7Answer' value='A'/>" + " " + questionsArr[6].answers.a + "<br>");
+    $("#questionSevenAnswers").append("<input type='radio' name='question7Answer' value='B'/>" + " " + questionsArr[6].answers.b + "<br>");
+    $("#questionSevenAnswers").append("<input type='radio' name='question7Answer' value='C'/>" + " " + questionsArr[6].answers.c + "<br>");
+    $("#questionSevenAnswers").append("<input type='radio' name='question7Answer' value='D'/>" + " " + questionsArr[6].answers.d + "<br>");
+
+    $("#questionEight").text(questionsArr[7].question);
+    $("#questionEightAnswers").append("<input type='radio' name='question8Answer' value='A'/>" + " " + questionsArr[7].answers.a + "<br>");
+    $("#questionEightAnswers").append("<input type='radio' name='question8Answer' value='B'/>" + " " + questionsArr[7].answers.b + "<br>");
+    $("#questionEightAnswers").append("<input type='radio' name='question8Answer' value='C'/>" + " " + questionsArr[7].answers.c + "<br>");
+    $("#questionEightAnswers").append("<input type='radio' name='question8Answer' value='D'/>" + " " + questionsArr[7].answers.d + "<br>");
+
+    $("#questionNine").text(questionsArr[8].question);
+    $("#questionNineAnswers").append("<input type='radio' name='question9Answer' value='A'/>" + " " + questionsArr[8].answers.a + "<br>");
+    $("#questionNineAnswers").append("<input type='radio' name='question9Answer' value='B'/>" + " " + questionsArr[8].answers.b + "<br>");
+    $("#questionNineAnswers").append("<input type='radio' name='question9Answer' value='C'/>" + " " + questionsArr[8].answers.c + "<br>");
+    $("#questionNineAnswers").append("<input type='radio' name='question9Answer' value='D'/>" + " " + questionsArr[8].answers.d + "<br>");
+
+    $("#questionTen").text(questionsArr[9].question);
+    $("#questionTenAnswers").append("<input type='radio' name='question10Answer' value='A'/>" + " " + questionsArr[9].answers.a + "<br>");
+    $("#questionTenAnswers").append("<input type='radio' name='question10Answer' value='B'/>" + " " + questionsArr[9].answers.b + "<br>");
+    $("#questionTenAnswers").append("<input type='radio' name='question10Answer' value='C'/>" + " " + questionsArr[9].answers.c + "<br>");
+    $("#questionTenAnswers").append("<input type='radio' name='question10Answer' value='D'/>" + " " + questionsArr[9].answers.d + "<br>");
+
+    $("#questionEleven").text(questionsArr[10].question);
+    $("#questionElevenAnswers").append("<input type='radio' name='question11Answer' value='A'/>" + " " + questionsArr[10].answers.a + "<br>");
+    $("#questionElevenAnswers").append("<input type='radio' name='question11Answer' value='B'/>" + " " + questionsArr[10].answers.b + "<br>");
+    $("#questionElevenAnswers").append("<input type='radio' name='question11Answer' value='C'/>" + " " + questionsArr[10].answers.c + "<br>");
+    $("#questionElevenAnswers").append("<input type='radio' name='question11Answer' value='D'/>" + " " + questionsArr[10].answers.d + "<br>");
+
+    $("#questionTwelve").text(questionsArr[11].question);
+    $("#questionTwelveAnswers").append("<input type='radio' name='question12Answer' value='A'/>" + " " + questionsArr[11].answers.a + "<br>");
+    $("#questionTwelveAnswers").append("<input type='radio' name='question12Answer' value='B'/>" + " " + questionsArr[11].answers.b + "<br>");
+    $("#questionTwelveAnswers").append("<input type='radio' name='question12Answer' value='C'/>" + " " + questionsArr[11].answers.c + "<br>");
+    $("#questionTwelveAnswers").append("<input type='radio' name='question12Answer' value='D'/>" + " " + questionsArr[11].answers.d + "<br>");
 };
 questionDisplay();
 //function call that displays question text to card deck/DOM
@@ -212,11 +248,17 @@ $("#submit").on("click", function() {
     var qFour = $('input[name=question4Answer]:checked').val(); 
     var qFive = $('input[name=question5Answer]:checked').val(); 
     var qSix = $('input[name=question6Answer]:checked').val(); 
+    var qSeven = $('input[name=question7Answer]:checked').val();
+    var qEight = $('input[name=question8Answer]:checked').val();
+    var qNine = $('input[name=question9Answer]:checked').val();
+    var qTen = $('input[name=question10Answer]:checked').val();
+    var qEleven = $('input[name=question11Answer]:checked').val();
+    var qTwelve = $('input[name=question12Answer]:checked').val();
     clearInterval(interval);
     $("#questions-div").hide();
     $("#gameOverMessage").show();
     //submit button clears the interval
-    answersArr = [qOne,qTwo,qThree,qFour,qFive,qSix];
+    answersArr = [qOne,qTwo,qThree,qFour,qFive,qSix,qSeven,qEight,qNine,qTen,qEleven,qTwelve];
     //radio answers are saved to answersArr
     for (var i = 0; i < answersArr.length; i++) {
         //iterates through answersArr and checks radio value variables against correctAnswersArr at index i
@@ -237,8 +279,14 @@ function timesUp() {
     var qFour = $('input[name=question4Answer]:checked').val(); 
     var qFive = $('input[name=question5Answer]:checked').val(); 
     var qSix = $('input[name=question6Answer]:checked').val();
+    var qSeven = $('input[name=question7Answer]:checked').val();
+    var qEight = $('input[name=question8Answer]:checked').val();
+    var qNine = $('input[name=question9Answer]:checked').val();
+    var qTen = $('input[name=question10Answer]:checked').val();
+    var qEleven = $('input[name=question11Answer]:checked').val();
+    var qTwelve = $('input[name=question12Answer]:checked').val();
     //assigns variables containing radio value
-    answersArr = [qOne,qTwo,qThree,qFour,qFive,qSix];
+    answersArr = [qOne,qTwo,qThree,qFour,qFive,qSix,qSeven,qEight,qNine,qTen,qEleven,qTwelve];
     //assigns variables to answersArr
     for (var i = 0; i < answersArr.length; i++) {
         //iterates through answersArr and compares responses to correctAnswersArr
@@ -260,11 +308,17 @@ $("#restart").on("click", function() {
     var qFour = $('input[name=question4Answer]').prop('checked',false);
     var qFive = $('input[name=question5Answer]').prop('checked',false);
     var qSix = $('input[name=question6Answer]').prop('checked',false);
+    var qSeven = $('input[name=question7Answer]').prop('checked',false);
+    var qEight = $('input[name=question8Answer]').prop('checked',false);
+    var qNine = $('input[name=question9Answer]').prop('checked',false);
+    var qTen = $('input[name=question10Answer]').prop('checked',false);
+    var qEleven = $('input[name=question11Answer]').prop('checked',false);
+    var qTwelve = $('input[name=question12Answer]').prop('checked',false);
     //series of variable reassignments that removes checks from radios when game is restarted
     $("#gameOverMessage").hide();
     $("#results").empty();
     $("#questions-div").show();
-    timer = 21;
+    timer = 91;
     //resets game clock to original value
     results = 0;
     //resets results variable to original value
