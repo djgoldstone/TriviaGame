@@ -136,7 +136,6 @@ function countDown() {
     var timerDisplay = $("#timer").text(timer);
     //variable using JQuery to display decrementing timer
 }
-//
 
 $("#questions-div").hide();
 $("#gameOverMessage").hide();
