@@ -5,7 +5,7 @@ var possibleCorrect = 6;
 var answersArr = [];
 //array that will contain user's answers to be checked against correctAnswer key:value
 
-var correctAnswersArr = ["B","C","C","A","D","B"];
+var correctAnswersArr = ["B","C","C","A","D","B","D","A","C","B","A","D"];
 //array containing the correct answer values as strings
 
 var questionsArr = [
@@ -17,7 +17,6 @@ var questionsArr = [
             c: "Steven Speilberg",
             d: "Wes Craven",
         },
-        correctAnswer: "b",
     },
     {
         question: "What movie did Sylvester Stallone win an Oscar for?",
@@ -27,7 +26,6 @@ var questionsArr = [
             c: "Rocky",
             d: "The Expendables",
         },
-        correctAnswer: "c",
     },
     {
         question: "Where was 'Dirty Harry' filmed?",
@@ -37,7 +35,6 @@ var questionsArr = [
             c: "San Francisco",
             d: "Los Angeles",
         },
-        correctAnswer: "c",
     },
     {
         question: "When was the original 'Scarface' released?",
@@ -47,7 +44,6 @@ var questionsArr = [
             c: "1938",
             d: "1949",
         },
-        correctAnswer: "a",
     },
     {
         question: "Which wartime period was depicted in the classic film 'Gone With The Wind'?",
@@ -57,7 +53,6 @@ var questionsArr = [
             c: "The Cold War",
             d: "The American Civil War",
         },
-        correctAnswer: "d",
     },
     {
         question: "Who was the first female director to win an Academy Award?",
@@ -67,13 +62,67 @@ var questionsArr = [
             c: "Wanda Sykes",
             d: "J.K. Rowling",
         },
-        correctAnswer: "b",
-
+    },
+    {
+        question: "What was Arnold Schwarzenegger's highest grossing film?",
+        answers: {
+            a: "Hercules In New York",
+            b: "True Lies",
+            c: "Total Recall",
+            d: "Terminator 2: Judgement Day",
+        },
+    },
+    {
+        question: "Which film won the Academy Award for Best Picture in 1973?",
+        answers: {
+            a: "The Godfather",
+            b: "Dog Day Afternoon",
+            c: "Caligula",
+            d: "Boogie Nights",
+        },
+    },
+    {
+        question: "In this 1980's cerebral thriller James Woods makes love to a television set.",
+        answers: {
+            a: "Once Upon A Time In America",
+            b: "San Salvador",
+            c: "Videodrome",
+            d: "My Girl",
+        },
+    },
+    {
+        question: "Which actor is famous for the line, 'Greed, for lack of a better word, is good.'?",
+        answers: {
+            a: "Donald J. Trump",
+            b: "Michael Douglas",
+            c: "Michael Caine",
+            d: "Anthony Hopkins",
+        },
+    },
+    {
+        question: "What year was Forrest Gump released?",
+        answers: {
+            a: "1994",
+            b: "1991",
+            c: "1989",
+            d: "1999",
+        },
+    },
+    {
+        question: "What is the highest-grossing film of all time?",
+        answers: {
+            a: "Star Wars: The Force Awakens",
+            b: "Avengers: Endgame",
+            c: "Titanic",
+            d: "Avatar",
+        },
     },
 ];
 //Array of objects containing key: value pairs of: question key with a value containing a string phrased as a cinematic trivia question, answers key with the value of another object containing key:value pairs between a-d with values of answer options, and a third key containing the correct answer value as a string.
 var interval;
-var timer = 20;
+//empty variable which will contain interval
+var timer = 21;
+//variable containing timer value which will decrement using setInterval
 function countDown() {
     timer--;
     if (timer > 0) {
@@ -85,13 +134,34 @@ function countDown() {
         timesUp();
     }
     var timerDisplay = $("#timer").text(timer);
+    //variable using JQuery to display decrementing timer
 }
-interval = setInterval(countDown, 1000);
+//
+
+$("#questions-div").hide();
+$("#gameOverMessage").hide();
+
+function startGame() {
+    interval = setInterval(countDown, 1000);
+    //sets interval to count down from timer by one second at a time
+    countDown();
+    $("#questions-div").show();
+    //displays questions
+    $("#instructions").hide();
+    //hides instructions jumbotron
+}
+
+$("#start").on("click", function() {
+    startGame();
+});
+//on click the startGame function will be called
+
+
 
 //declared a variable containing an integer
 //declared a function which decrements timer variable by one, then created a conditional statement that checks if the timer variable is greater than 0, if so setTimeout will execute a decrement after one second. The value of the timer variable will then be displayed on the DOM at the #timer id using JQuery.
 
-
+function questionDisplay() {
     $("#questionOne").text(questionsArr[0].question);
     //utilizes JQuery to display question to the DOM on associated div utilizing .text
     $("#questionOneAnswers").append("<input type='radio' name='question1Answer' value='A'/>" + " " + questionsArr[0].answers.a + "<br>");
@@ -129,8 +199,9 @@ interval = setInterval(countDown, 1000);
     $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='B'/>" + " " + questionsArr[5].answers.b + "<br>");
     $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='C'/>" + " " + questionsArr[5].answers.c + "<br>");
     $("#questionSixAnswers").append("<input type='radio' name='question6Answer' value='D'/>" + " " + questionsArr[5].answers.d + "<br>");
-
-
+};
+questionDisplay();
+//function call that displays question text to card deck/DOM
 
 
 $("#submit").on("click", function() {
@@ -180,19 +251,26 @@ function timesUp() {
     //displays total correct out of possible correct to results div
 };
 
-$("#restart").on("click", function() {
-    $("#gameOverMessage").hide();
-    $("#questions-div").show();
-    $("#results").empty();
-    $('input[name=question1Answer]').attr('checked',false);
-    $('input[name=question2Answer]').attr('checked',false);
-    $('input[name=question3Answer]').attr('checked',false);
-    $('input[name=question4Answer]').attr('checked',false);
-    $('input[name=question5Answer]').attr('checked',false);
-    $('input[name=question6Answer]').attr('checked',false);
-    timer = 20;
-    results = 0;
-    interval = setInterval(countDown, 1000);
 
-}) 
+$("#restart").on("click", function() {
+//on click listener attached to restart button div
+    var qOne = $('input[name=question1Answer]').prop('checked',false);
+    var qTwo = $('input[name=question2Answer]').prop('checked',false);
+    var qThree = $('input[name=question3Answer]').prop('checked',false);
+    var qFour = $('input[name=question4Answer]').prop('checked',false);
+    var qFive = $('input[name=question5Answer]').prop('checked',false);
+    var qSix = $('input[name=question6Answer]').prop('checked',false);
+    //series of variable reassignments that removes checks from radios when game is restarted
+    $("#gameOverMessage").hide();
+    $("#results").empty();
+    $("#questions-div").show();
+    timer = 21;
+    //resets game clock to original value
+    results = 0;
+    //resets results variable to original value
+    countDown();
+    //restarts countdown
+    interval = setInterval(countDown, 1000);
+    //decrements timer variable at intervals of one second
+}); 
     
