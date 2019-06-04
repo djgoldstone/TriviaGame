@@ -184,6 +184,12 @@ $("#restart").on("click", function() {
     $("#gameOverMessage").hide();
     $("#questions-div").show();
     $("#results").empty();
+    $('input[name=question1Answer]').attr('checked',false);
+    $('input[name=question2Answer]').attr('checked',false);
+    $('input[name=question3Answer]').attr('checked',false);
+    $('input[name=question4Answer]').attr('checked',false);
+    $('input[name=question5Answer]').attr('checked',false);
+    $('input[name=question6Answer]').attr('checked',false);
     timer = 20;
     results = 0;
     interval = setInterval(countDown, 1000);
